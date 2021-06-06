@@ -1,0 +1,1 @@
+# nice60-zmk-config
