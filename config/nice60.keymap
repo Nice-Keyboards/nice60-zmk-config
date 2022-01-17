@@ -35,18 +35,18 @@
 
 		rgb_layer {
 // ------------------------------------------------------------------------------------------------
-// | BT CLR | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  |  /  |  *  |  -  | F12  | EFFECT REV |
-// |  BT 1   | |  UP | | HUEUP | SATUP | BRIUP | SPDUP |  7  |  8  |  9  |  +  |  | EFFECT FORW   |
+// | BT CLR |EFF REV|EFF FORW | F3  | F4  | F5  | F6  | F7  | F8  |  /  |  *  |  -  | F12  | BKSP |
+// |  BT 1   | |  UP | | HUEUP | SATUP | BRIUP | SPDUP |  7  |  8  |  9  |  +  |  |               |
 // |   BT 2   | LT |  DN  | RT | HUEDN | SATDN | BRIDN | SPDDN |  4  |  5  |  6  |       | ENTER  |
-// |    BT 3     |     | HOME | END  |    |      |    |      |  1  |  2  |  3  |    PRT SCR       |
-// |   BT 4  |      |  ALT |             TOG RGB                |   0   |        | TOG(1) |  DEL  |
+// |    BT 3     |  A  | HOME | END  |    |      |    |      |  1  |  2  |  3  |    PRT SCR       |
+// |   CTL  |  WIN  |  ALT |            TOG RGB                |   0   |         | TOG(1) |  DEL  |
 // ------------------------------------------------------------------------------------------------
 			bindings = <
-	&bt BT_CLR   &kp F1    &kp F2    &kp F3  &kp F4           &kp F5       &kp F6    &kp F7        &kp F8   &kp FSLH   &kp STAR  &kp MINUS &kp F12  &rgb_ug RGB_EFR
-	&bt BT_SEL 0  &trans    &kp UP    &trans  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI  &kp N7   &kp N8   &kp N9  &kp PLUS &trans &rgb_ug RGB_EFF 
+	&bt BT_CLR   &rgb_ug RGB_EFR    &rgb_ug RGB_EFF &kp F3  &kp F4  &kp F5       &kp F6    &kp F7        &kp F8   &kp FSLH   &kp STAR  &kp MINUS &kp F12  &kp BSPC
+	&bt BT_SEL 0  &trans    &kp UP    &trans  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI  &kp N7   &kp N8   &kp N9  &kp PLUS &trans &trans
 	&bt BT_SEL 1   &kp LEFT  &kp DOWN  &kp RIGHT &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &kp N4   &kp N5   &kp N6   &trans                &kp RET
-	&bt BT_SEL 2    &trans    &kp HOME    &kp END  &trans       &trans           &trans          &trans          &kp N1   &kp N2   &kp N3                       &kp PSCRN
-	&bt BT_SEL 3  &trans   &kp LALT                            &rgb_ug RGB_TOG                                       &kp N0      &trans      &tog 1               &kp DEL
+	&bt BT_SEL 2    &kp A    &kp HOME    &kp END  &trans       &trans           &trans          &trans          &kp N1   &kp N2   &kp N3                       &kp PSCRN
+	&kp LCTRL  &kp LGUI   &kp LALT                            &rgb_ug RGB_TOG                                       &kp N0      &trans      &tog 1               &kp DEL
 			>;
 		};
 	};
