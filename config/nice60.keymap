@@ -35,18 +35,18 @@
 
 		rgb_layer {
 // ------------------------------------------------------------------------------------------------
-// | BT CLR | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10  | F11 | F12 | EFFECT REV |
-// |  BT 1   |   |  UP |   | HUEUP | SATUP | BRIUP | SPDUP |   |     |    | PP |     |           |
+// | BT CLR | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10  | F11 | F12 |  	DEL|
+// |  BT 1   |   |  UP |   | HUEUP | SATUP | BRIUP | SPDUP |   |     |    | PP |     |   EFFECT REV |
 // |   BT 2   | LT |  DN  | RT | HUEDN | SATDN | BRIDN | SPDDN |   |     | prev|next |  EFFECT FORW |
 // |    BT 3     |     | calc |      |     |     |     |mute| vold | volu |     |                  |
-// |   BT 4  |      |      |             TOG RGB                | PRT SCR |       |       |  DEL  |
+// |   BT 4  | bootloader |      |             TOG RGB                | PRT SCR |       |       |       |
 // ------------------------------------------------------------------------------------------------
 			bindings = <
-	&bt BT_CLR   &kp F1    &kp F2    &kp F3  &kp F4           &kp F5          &kp F6          &kp F7          &kp F8   &kp F9   &kp F10  &kp F11 &kp F12  &rgb_ug RGB_EFR
-	&bt BT_SEL 0  &trans    &kp UP    &trans  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI  &trans   &trans   &kp C_PP  &trans  &trans          &trans 
+	&bt BT_CLR   &kp F1    &kp F2    &kp F3  &kp F4           &kp F5          &kp F6          &kp F7          &kp F8   &kp F9   &kp F10  &kp F11 &kp F12  &kp DEL
+	&bt BT_SEL 0  &trans    &kp UP    &trans  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI  &trans   &trans   &kp C_PP  &trans  &trans          &rgb_ug RGB_EFR 
 	&bt BT_SEL 1   &kp LEFT  &kp DOWN  &kp RIGHT &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &trans   &trans   &kp C_PREV   &kp C_NEXT        &rgb_ug RGB_EFF
 	&bt BT_SEL 2    &trans    &trans    &kp C_AL_CALC   &trans          &trans          &trans          &kp C_MUTE          &kp C_VOL_DN   &kp C_VOL_UP  &trans                          &trans
-	&bt BT_SEL 3  &trans   &trans                            &rgb_ug RGB_TOG                                      &kp PSCRN      &trans      &trans               &kp DEL
+	&bt BT_SEL 3  &bootloader   &trans                            &rgb_ug RGB_TOG                                      &kp PSCRN      &trans      &trans               &trans
 			>;
 		};
 	};
