@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:2.5
+      image: zmkfirmware/zmk-build-arm:stable
     strategy:
       fail-fast: false
       matrix:
@@ -22,10 +22,10 @@ jobs:
           cache-name: cache-zephyr-modules
         with:
           path: |
-            bootloader/
             modules/
             tools/
             zephyr/
+            bootloader/
             zmk/
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('config/west.yml') }}
           restore-keys: |
