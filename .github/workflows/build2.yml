@@ -58,7 +58,7 @@ jobs:
           -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: Generated DTS file
         if: always()
-        run: cat -n build/zephyr/${{ matrix.board }}.dts.pre.tmp
+        run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
