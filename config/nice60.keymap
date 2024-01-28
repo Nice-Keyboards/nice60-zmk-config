@@ -6,16 +6,16 @@
 #include <dt-bindings/zmk/reset.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-// Layers
+// Layers - https://zmk.dev/docs/behaviors/layers
 #define L_DEFAULT	0
 #define L_DRAFT    	1
 #define L_DISABLE	2
 
-// Combos
+// Combos - https://zmk.dev/docs/features/combos
 #define C_DEFAULT_TIMEOUT	50
 #define C_DEFAULT_REQ_IDLE	(-1)
-#define C_DEFAULT_RELEASE	(/delete-property/ slow-release)
-#define C_SLOW_RELEASE		(slow-release)
+#define C_DEFAULT_RELEASE	("/delete-property/ slow-release")
+#define C_SLOW_RELEASE		("slow-release")
 
 	// ((SLOWREL == 1) ? slow-release : /delete-property/ slow-release); \
 	// if (SLOWREL) { \
@@ -33,7 +33,6 @@
 	};
 
 / {
-	// https://zmk.dev/docs/features/combos
     combos {
         compatible = "zmk,combos";
 
