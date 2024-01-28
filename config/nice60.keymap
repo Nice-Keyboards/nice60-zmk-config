@@ -16,26 +16,19 @@
 // 	layers = <LAYERS>; \
 //   };
 
-// #define COMBO(NAME, BINDINGS, KEYPOS) \
-// 	combo_##NAME { \
-// 		timeout-ms = <50>; \
-// 		bindings = <BINDINGS>; \
-// 		key-positions = <KEYPOS>; \
-// 		layers = <0>; \
-// 	};
 
 #define L_DEFAULT	0
 #define L_DRAFT    	1
 #define L_DISABLE	2
 
-#define COMBO(NAME, LAYERS, KEYPOS, BINDINGS, TIMEOUT, REQIDLE) \
+#define COMBO(NAME, LAYERS, KEYPOS, BINDINGS, TIMEOUT, REQIDLE, SLOWREL) \
 	combo_##NAME { \
 		layers = <LAYERS>; \
 		key-positions = <KEYPOS>; \
 		bindings = <BINDINGS>; \
 		timeout-ms = <TIMEOUT>; \
 		require-prior-idle-ms = <REQIDLE>; \
-		slow-release; \
+		SLOWREL slow-release; \
 	};
 
 / {
@@ -44,10 +37,8 @@
         compatible = "zmk,combos";
 
 		// REQIDLE does not apply when in disable_layer
-		COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &tog L_DISABLE, 50, 1000)
-
-		// https://zmk.dev/docs/config/combos#devicetree
-		// COMBO(disable, &tog 2, 0 60, 50, -1, /slow-release/, 2)
+		// COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &tog L_DISABLE, 50, 1000)
+		COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &kp Q, 50, 1000, "/delete-property/")
     };
 
 	keymap {
