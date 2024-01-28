@@ -31,6 +31,7 @@
 		bindings = <BINDINGS>; \
 		timeout-ms = <TIMEOUT>; \
 		require-prior-idle-ms = <REQIDLE>; \
+		slow-release; \
 	};
 
 / {
