@@ -6,15 +6,23 @@
 #include <dt-bindings/zmk/reset.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+#define COMBO(NAME, BINDINGS, KEYPOS, TIMEOUT, REQIDLE, SLOWREL, LAYERS) \
+  combo_##NAME { \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+	timeout-ms = <TIMEOUT>; \
+    require-prior-idle-ms = <REQIDLE>; \
+	slow-release = <SLOWREL>; \
+	layers = <LAYERS>; \
+  };
+
 / {
+	// https://zmk.dev/docs/features/combos
     combos {
         compatible = "zmk,combos";
-        combo_clean {
-            timeout-ms = <50>;
-            key-positions = <0 60>;
-			layers = <2>;
-            bindings = <&tog 2>;
-        };
+
+		// https://zmk.dev/docs/config/combos#devicetree
+		COMBO(disable, &tog 2, 0 60, 50, -1, false, 2)
     };
 
 	keymap {
