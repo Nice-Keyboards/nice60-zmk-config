@@ -6,8 +6,6 @@
 #include <dt-bindings/zmk/reset.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-#include <stdbool.h>
-
 // #define COMBO(NAME, BINDINGS, KEYPOS, TIMEOUT, REQIDLE, SLOWREL, LAYERS) \
 //   combo_##NAME { \
 //     bindings = <BINDINGS>; \
@@ -30,7 +28,7 @@
 		bindings = <BINDINGS>; \
 		timeout-ms = <TIMEOUT>; \
 		require-prior-idle-ms = <REQIDLE>; \
-		((SLOWREL) ? slow-release : /delete-property/ slow-release); \
+		((SLOWREL == 1) ? slow-release : /delete-property/ slow-release); \
 		// if (SLOWREL) { \
         // 	slow-release; \
     	// } \
@@ -44,7 +42,7 @@
 		// REQIDLE does not apply when in disable_layer
 		// COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &tog L_DISABLE, 50, 1000)
 		// COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &kp Q, 50, 1000, /delete-property/)
-		COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &kp Q, 50, 1000, true)
+		COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &kp Q, 50, 1000, 1)
     };
 
 	keymap {
