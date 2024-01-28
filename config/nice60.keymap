@@ -12,8 +12,8 @@
 #define L_DISABLE	2
 
 // Combos
-// #define C_DEFAULT_TIMEOUT	50
-// #define C_DEFAULT_REQ_IDLE	-1
+#define C_DEFAULT_TIMEOUT	50
+#define C_DEFAULT_REQ_IDLE	-1
 // #define C_DEFAULT_RELEASE	"/delete-property/ slow-release"
 // #define C_SLOW_RELEASE		"slow-release"
 
@@ -40,10 +40,10 @@
 		// REQIDLE does not apply when in disable_layer
 		// COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &tog L_DISABLE, 50, 1000)
 		// COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &kp Q, 50, 1000, /delete-property/)
-		COMBO(foo, L_DEFAULT L_DISABLE, 0 60, &kp Q, 50, 1000, slow-release)
-		COMBO(bar, L_DEFAULT L_DISABLE, 1 60, &kp W, 50, 1000, /delete-property/ slow-release)
-		// COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &kp Q, C_DEFAULT_TIMEOUT, C_DEFAULT_REQ_IDLE, slow-release)
-		// COMBO(disable, L_DEFAULT L_DISABLE, 1 60, &kp W, C_DEFAULT_TIMEOUT, C_DEFAULT_REQ_IDLE, /delete-property/ slow-release)
+		// COMBO(foo, L_DEFAULT L_DISABLE, 0 60, &kp Q, 50, 1000, slow-release)
+		// COMBO(bar, L_DEFAULT L_DISABLE, 1 60, &kp W, 50, 1000, /delete-property/ slow-release)
+		COMBO(foo, L_DEFAULT L_DISABLE, 0 60, &kp Q, C_DEFAULT_TIMEOUT, C_DEFAULT_REQ_IDLE, slow-release)
+		COMBO(bar, L_DEFAULT L_DISABLE, 1 60, &kp W, C_DEFAULT_TIMEOUT, C_DEFAULT_REQ_IDLE, /delete-property/ slow-release)
     };
 
 	keymap {
