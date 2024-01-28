@@ -17,9 +17,14 @@
 //   };
 
 
+// Layers
 #define L_DEFAULT	0
 #define L_DRAFT    	1
 #define L_DISABLE	2
+
+// Combos
+#define C_SLOW_RELEASE "slow-release"
+#define C_NORMAL_RELEASE "/delete-property/ slow-release"
 
 	// ((SLOWREL == 1) ? slow-release : /delete-property/ slow-release); \
 	// if (SLOWREL) { \
@@ -45,7 +50,9 @@
 		// COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &tog L_DISABLE, 50, 1000)
 		// COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &kp Q, 50, 1000, /delete-property/)
 		// COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &kp Q, 50, 1000, /delete-property/ slow-release)
-		COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &kp Q, 50, 1000, slow-release)
+		// COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &kp Q, 50, 1000, slow-release)
+		COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &kp Q, 50, 1000, C_SLOW_RELEASE)
+		COMBO(disable, L_DEFAULT L_DISABLE, 1 60, &kp W, 50, 1000, C_NORMAL_RELEASE)
     };
 
 	keymap {
