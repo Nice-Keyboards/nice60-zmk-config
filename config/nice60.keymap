@@ -28,7 +28,7 @@
 		bindings = <BINDINGS>; \
 		timeout-ms = <TIMEOUT>; \
 		require-prior-idle-ms = <REQIDLE>; \
-		(SLOWREL) ? slow-release; : /delete-property/ slow-release; \
+		((SLOWREL) ? slow-release : /delete-property/ slow-release); \
 		// if (SLOWREL) { \
         // 	slow-release; \
     	// } \
