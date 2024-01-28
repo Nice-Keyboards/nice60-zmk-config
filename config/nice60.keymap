@@ -12,19 +12,19 @@
 #define L_DISABLE	2
 
 // Combos - https://zmk.dev/docs/features/combos
-#define C_DEFAULT_TIMEOUT	50
-#define C_DEFAULT_REQ_IDLE	(-1)
-#define C_DEFAULT_RELEASE	/delete-property/ slow-release
-#define C_SLOW_RELEASE		slow-release
+#define C_DEFAULT_TIMEOUT			50
+#define C_DEFAULT_REQ_PRIOR_IDLE	(-1)
+#define C_DEFAULT_RELEASE			/delete-property/ slow-release
+#define C_SLOW_RELEASE				slow-release
 
-#define COMBO(NAME, LAYERS, KEYPOS, BINDINGS, TIMEOUT, REQIDLE, SLOWREL) \
+#define COMBO(NAME, LAYERS, KEYS, BINDINGS, TIMEOUT, IDLE, RELEASE) \
 	combo_##NAME { \
 		layers = <LAYERS>; \
-		key-positions = <KEYPOS>; \
+		key-positions = <KEYS>; \
 		bindings = <BINDINGS>; \
 		timeout-ms = <TIMEOUT>; \
-		require-prior-idle-ms = <REQIDLE>; \
-		SLOWREL; \
+		require-prior-idle-ms = <IDLE>; \
+		RELEASE; \
 	};
 
 / {
@@ -32,10 +32,9 @@
         compatible = "zmk,combos";
 
 		// REQIDLE does not apply when in disable_layer
-		// COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &tog L_DISABLE, 50, 1000)
 		COMBO(disable, L_DEFAULT L_DISABLE, 1 53 60, &tog L_DISABLE, C_DEFAULT_TIMEOUT, 1000, C_DEFAULT_RELEASE)
-		COMBO(foo, L_DEFAULT L_DISABLE, 1 60, &kp F, C_DEFAULT_TIMEOUT, C_DEFAULT_REQ_IDLE, C_DEFAULT_RELEASE)
-		COMBO(bar, L_DEFAULT L_DISABLE, 2 60, &kp U, C_DEFAULT_TIMEOUT, C_DEFAULT_REQ_IDLE, C_SLOW_RELEASE)
+		COMBO(foo, L_DEFAULT L_DISABLE, 1 60, &kp F, C_DEFAULT_TIMEOUT, C_DEFAULT_REQ_PRIOR_IDLE, C_DEFAULT_RELEASE)
+		COMBO(bar, L_DEFAULT L_DISABLE, 2 60, &kp U, C_DEFAULT_TIMEOUT, C_DEFAULT_REQ_PRIOR_IDLE, C_SLOW_RELEASE)
     };
 
 	keymap {
