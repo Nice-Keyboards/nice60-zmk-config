@@ -28,7 +28,9 @@
 		bindings = <BINDINGS>; \
 		timeout-ms = <TIMEOUT>; \
 		require-prior-idle-ms = <REQIDLE>; \
-		SLOWREL slow-release; \
+		if (SLOWREL) {
+        	slow-release;
+    	} \
 	};
 
 / {
@@ -38,7 +40,8 @@
 
 		// REQIDLE does not apply when in disable_layer
 		// COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &tog L_DISABLE, 50, 1000)
-		COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &kp Q, 50, 1000, /delete-property/)
+		// COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &kp Q, 50, 1000, /delete-property/)
+		COMBO(disable, L_DEFAULT L_DISABLE, 0 60, &kp Q, 50, 1000, true)
     };
 
 	keymap {
