@@ -11,7 +11,7 @@
         compatible = "zmk,combos";
         combo_clean {
             timeout-ms = <50>;
-            key-positions = <0 1>;
+            key-positions = <0 60>;
 			layers = <2>;
             bindings = <&tog 2>;
         };
@@ -67,7 +67,7 @@
 	&none	&none   &none   &none  	&none  	&none	&none 	&none  	&none   &none   &none   &none  	&none   &none
 	&none   &none  	&none  	&none 	&none 	&none 	&none 	&none 	&none   &none   &none   &none        	&none
 	&none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none                   &none
-	&mo 1  	&none   &none                           &none                           &none	&none	&none   &tog 2
+	&tog 2 	&none   &none                           &none                           &none	&none	&none   &none
 			>;
 		};
 	};
