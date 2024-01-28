@@ -6,6 +6,8 @@
 #include <dt-bindings/zmk/reset.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+#include <stdbool.h>
+
 // #define COMBO(NAME, BINDINGS, KEYPOS, TIMEOUT, REQIDLE, SLOWREL, LAYERS) \
 //   combo_##NAME { \
 //     bindings = <BINDINGS>; \
