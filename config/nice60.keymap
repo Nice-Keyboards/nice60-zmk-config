@@ -24,13 +24,13 @@
 // 		layers = <0>; \
 // 	};
 
-#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, REQIDLE) \
+#define COMBO(NAME, LAYERS, KEYPOS, BINDINGS, TIMEOUT, REQIDLE) \
 	combo_##NAME { \
-		timeout-ms = <50>; \
-		bindings = <BINDINGS>; \
-		key-positions = <KEYPOS>; \
-		require-prior-idle-ms = <REQIDLE>; \
 		layers = <LAYERS>; \
+		key-positions = <KEYPOS>; \
+		bindings = <BINDINGS>; \
+		timeout-ms = <TIMEOUT>; \
+		require-prior-idle-ms = <REQIDLE>; \
 	};
 
 / {
@@ -38,7 +38,8 @@
     combos {
         compatible = "zmk,combos";
 
-		COMBO(disable, &tog 2, 0 60, 0 2, 3000)
+		// REQIDLE does not apply when in disable_layer
+		COMBO(disable, 0 2, 0 60, &tog 2, 50, 2000)
 
 		// https://zmk.dev/docs/config/combos#devicetree
 		// COMBO(disable, &tog 2, 0 60, 50, -1, /slow-release/, 2)
@@ -81,7 +82,7 @@
 			>;
 		};
 
-		clean_layer {
+		disable_layer {
 // ------------------------------------------------------------------------------------------
 // |     |     |     |     |     |     |     |     |     |     |     |     |     |          |
 // |      |     |     |     |     |     |     |     |     |     |     |     |     |         |
