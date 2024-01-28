@@ -16,20 +16,28 @@
 // 	layers = <LAYERS>; \
 //   };
 
-#define COMBO(NAME, BINDINGS, KEYPOS) \
-  combo_##NAME { \
-    timeout-ms = <50>; \
-    bindings = <BINDINGS>; \
-    key-positions = <KEYPOS>; \
-    layers = <0>; \
-  };
+// #define COMBO(NAME, BINDINGS, KEYPOS) \
+// 	combo_##NAME { \
+// 		timeout-ms = <50>; \
+// 		bindings = <BINDINGS>; \
+// 		key-positions = <KEYPOS>; \
+// 		layers = <0>; \
+// 	};
+
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
+	combo_##NAME { \
+		timeout-ms = <50>; \
+		bindings = <BINDINGS>; \
+		key-positions = <KEYPOS>; \
+		layers = <LAYERS>; \
+	};
 
 / {
 	// https://zmk.dev/docs/features/combos
     combos {
         compatible = "zmk,combos";
 
-		COMBO(disable, &tog 2, 0 60)
+		COMBO(disable, &tog 2, 0 60, 0 2)
 
 		// https://zmk.dev/docs/config/combos#devicetree
 		// COMBO(disable, &tog 2, 0 60, 50, -1, /slow-release/, 2)
