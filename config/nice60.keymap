@@ -38,7 +38,7 @@
     combos {
         compatible = "zmk,combos";
 
-		COMBO(disable, &tog 2, 0 60, 0 2, 200)
+		COMBO(disable, &tog 2, 0 60, 0 2, 3000)
 
 		// https://zmk.dev/docs/config/combos#devicetree
 		// COMBO(disable, &tog 2, 0 60, 50, -1, /slow-release/, 2)
