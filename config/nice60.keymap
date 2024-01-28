@@ -29,7 +29,7 @@
 	&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp LBKT  &kp RBKT  &kp BSLH
 	&kp CLCK  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI &kp SQT           &kp RET
 	&kp LSHFT   &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH           &kp RSHFT
-	&kp LCTRL &kp LGUI &kp LALT             &kp SPACE                     &kp RALT  &kp RGUI  &mo 1   &kp RCTRL
+	&kp LCTRL &kp LGUI &kp LALT             &kp SPACE                     &kp RALT  &kp RGUI  &kp RCTRL   &mo 1
 			>;
 		};
 
@@ -46,7 +46,7 @@
 	&bt BT_SEL 0  &trans    &kp UP    &trans  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI  &trans   &trans   &trans   &trans  &trans          &trans 
 	&bt BT_SEL 1   &kp LEFT  &kp DOWN  &kp RIGHT &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &trans   &trans   &trans   &trans        &rgb_ug RGB_EFF
 	&bt BT_SEL 2    &trans    &trans    &trans   &trans          &trans          &trans          &trans          &trans   &trans   &trans                          &trans
-	&bt BT_SEL 3  &trans   &trans                            &rgb_ug RGB_TOG                                     &bootloader       &sys_reset      &trans          &kp DEL
+	&bt BT_SEL 3  &trans   &trans                            &rgb_ug RGB_TOG                                     &bootloader       &sys_reset      &out OUT_TOG    &trans
 			>;
 		};
 	};
