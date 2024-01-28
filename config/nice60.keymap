@@ -14,8 +14,8 @@
 // Combos - https://zmk.dev/docs/features/combos
 #define C_DEFAULT_TIMEOUT	50
 #define C_DEFAULT_REQ_IDLE	(-1)
-#define C_DEFAULT_RELEASE	/delete-property/ slow-release
-#define C_SLOW_RELEASE		slow-release
+#define C_DEFAULT_RELEASE	(/delete-property/ slow-release)
+#define C_SLOW_RELEASE		(slow-release)
 
 	// ((SLOWREL == 1) ? slow-release : /delete-property/ slow-release); \
 	// if (SLOWREL) { \
