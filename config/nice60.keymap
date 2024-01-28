@@ -7,6 +7,16 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_clean {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+			layers = <2>;
+            bindings = <&tog 2>;
+        };
+    };
+
 	keymap {
 		compatible = "zmk,keymap";
 		
