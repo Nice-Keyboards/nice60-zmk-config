@@ -21,6 +21,11 @@
 #define L_DRAFT    	1
 #define L_DISABLE	2
 
+	// ((SLOWREL == 1) ? slow-release : /delete-property/ slow-release); \
+	// if (SLOWREL) { \
+	// 	slow-release; \
+	// } \
+
 #define COMBO(NAME, LAYERS, KEYPOS, BINDINGS, TIMEOUT, REQIDLE, SLOWREL) \
 	combo_##NAME { \
 		layers = <LAYERS>; \
@@ -28,10 +33,6 @@
 		bindings = <BINDINGS>; \
 		timeout-ms = <TIMEOUT>; \
 		require-prior-idle-ms = <REQIDLE>; \
-		// ((SLOWREL == 1) ? slow-release : /delete-property/ slow-release); \
-		// if (SLOWREL) { \
-        // 	slow-release; \
-    	// } \
 	};
 
 / {
