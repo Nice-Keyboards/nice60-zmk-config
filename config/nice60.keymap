@@ -12,7 +12,7 @@
     key-positions = <KEYPOS>; \
 	timeout-ms = <TIMEOUT>; \
     require-prior-idle-ms = <REQIDLE>; \
-	slow-release = <SLOWREL>; \
+	SLOWREL; \
 	layers = <LAYERS>; \
   };
 
@@ -22,7 +22,7 @@
         compatible = "zmk,combos";
 
 		// https://zmk.dev/docs/config/combos#devicetree
-		COMBO(disable, &tog 2, 0 60, 50, -1, false, 2)
+		COMBO(disable, &tog 2, 0 60, 50, -1, /slow-release/, 2)
     };
 
 	keymap {
