@@ -39,7 +39,7 @@
 // |  BT 1   |   |  UP |   | HUEUP | SATUP | BRIUP | SPDUP |   |     |    |     |     |           |
 // |   BT 2   | LT |  DN  | RT | HUEDN | SATDN | BRIDN | SPDDN |   |     |   |     |  EFFECT FORW |
 // |    BT 3     |     |      |      |     |     |     |     |     |     |     |                  |
-// |   BT 4  |      |      |             TOG RGB                | BOOT | RESET | OUT TOGG |  DEL  |
+// |   BT 4  |      |      |             TOG RGB                | BOOTLOADER | RESET | OUT TOG |  |
 // ------------------------------------------------------------------------------------------------
 			bindings = <
 	&bt BT_CLR   &kp F1    &kp F2    &kp F3  &kp F4           &kp F5          &kp F6          &kp F7          &kp F8   &kp F9   &kp F10  &kp F11 &kp F12  &rgb_ug RGB_EFR
