@@ -22,7 +22,7 @@
 // | TAB  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |   "|"   |
 // | CAPS  |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |     ENTER    |
 // |  SHIFT  |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |      SHIFT       |
-// |  CTL  |  WIN  |  ALT  |            SPACE              |  ALT  |  WIN  |  MO(1) |  CTL  |
+// |  CTL  |  WIN  |  ALT  |            SPACE              |  ALT  |  WIN  |  CTL |  MO(1)  |
 // ------------------------------------------------------------------------------------------
 			bindings = <
 	&gresc  &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS &kp EQUAL  &kp BSPC
@@ -39,7 +39,7 @@
 // |  BT 1   |   |  UP |   | HUEUP | SATUP | BRIUP | SPDUP |   |     |    |     |     |           |
 // |   BT 2   | LT |  DN  | RT | HUEDN | SATDN | BRIDN | SPDDN |   |     |   |     |  EFFECT FORW |
 // |    BT 3     |     |      |      |     |     |     |     |     |     |     |                  |
-// |   BT 4  |      |      |             TOG RGB                | PRT SCR |       |       |  DEL  |
+// |   BT 4  |      |      |             TOG RGB                | BOOT | RESET | OUT TOGG |  DEL  |
 // ------------------------------------------------------------------------------------------------
 			bindings = <
 	&bt BT_CLR   &kp F1    &kp F2    &kp F3  &kp F4           &kp F5          &kp F6          &kp F7          &kp F8   &kp F9   &kp F10  &kp F11 &kp F12  &rgb_ug RGB_EFR
