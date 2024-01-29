@@ -85,7 +85,7 @@
 	&none	&none   &none   &none  	&none  	&none	&none 	&none  	&none   &none   &none   &none  	&none   &none
 	&none   &none  	&none  	&none 	&none 	&none 	&none 	&none 	&none   &none   &none   &none        	&none
 	&none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none                   &none
-	&none 	&none   &none                           &tog L_DISABLE                   &none	&none	&none   &none
+	&none 	&none   &none                           &none                   		&none	&none	&none   &none
 			>;
 		};
 	};
